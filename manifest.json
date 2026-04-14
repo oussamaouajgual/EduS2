@@ -1,0 +1,27 @@
+{
+  "name": "SMP S2 Hub — FS Meknès",
+  "short_name": "SMP S2 Hub",
+  "description": "Premium academic resource hub for Physics SMP Semester 2 students at FS Meknès.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050508",
+  "theme_color": "#050508",
+  "categories": ["education"],
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}

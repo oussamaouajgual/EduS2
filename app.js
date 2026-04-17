@@ -17,7 +17,7 @@ const RESOURCES = {
     timetables: [
       'timetable-a.jpg',
       'CamScanner 04-14-2026 22.37_1 (1).jpg',
-      'CamScanner 04-14-2026 22.37_2.jpg'
+      'Screenshot 2026-04-17 200147.png'
     ]
   },
   B: {
@@ -28,7 +28,7 @@ const RESOURCES = {
     timetables: [
       'timetable-b.jpg',
       'CamScanner 04-14-2026 22.37_1 (1).jpg',
-      'CamScanner 04-14-2026 22.37_2.jpg'
+      'Screenshot 2026-04-17 200147.png'
     ]
   },
   C: {
@@ -39,7 +39,7 @@ const RESOURCES = {
     timetables: [
       'timetable-c.jpg',
       'CamScanner 04-14-2026 22.37_1 (1).jpg',
-      'CamScanner 04-14-2026 22.37_2.jpg'
+      'Screenshot 2026-04-17 200147.png'
     ]
   }
 };

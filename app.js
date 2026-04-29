@@ -10,7 +10,7 @@
    ─────────────────────────────────────────────────────────── */
 const RESOURCES = {
   A: {
-    courses:   'https://drive.google.com/drive/folders/1VNs_3MZTCHjzMtOcIhQemL2VUYcGlS8R?usp=drive_link',
+    courses:   'https://drive.google.com/drive/folders/1TkWXeh4bNBGFDW-rKX5wkAu4g9093T9K?usp=sharing',
     summaries: 'https://drive.google.com/drive/folders/1ySqvGQktA7cPiSbBYsublrXRS333tktj?usp=drive_link',
     tp:        'https://drive.google.com/drive/folders/1OjtbFPkgr2TEUIamicX64zTEIb8rEdsx?usp=drive_link',
     td:        'https://drive.google.com/drive/folders/10vHiPPSf93ZUGL7EQOCwu9Tg17Op3dWT?usp=drive_link',
@@ -21,7 +21,7 @@ const RESOURCES = {
     ]
   },
   B: {
-    courses:   'https://drive.google.com/drive/folders/1VNs_3MZTCHjzMtOcIhQemL2VUYcGlS8R?usp=drive_link',
+    courses:   'https://drive.google.com/drive/folders/1TkWXeh4bNBGFDW-rKX5wkAu4g9093T9K?usp=sharing',
     summaries: 'https://drive.google.com/drive/folders/1ySqvGQktA7cPiSbBYsublrXRS333tktj?usp=drive_link',
     tp:        'https://drive.google.com/drive/folders/1OjtbFPkgr2TEUIamicX64zTEIb8rEdsx?usp=drive_link',
     td:        'https://drive.google.com/drive/folders/10vHiPPSf93ZUGL7EQOCwu9Tg17Op3dWT?usp=drive_link',
@@ -32,7 +32,7 @@ const RESOURCES = {
     ]
   },
   C: {
-    courses:   'https://drive.google.com/drive/folders/1VNs_3MZTCHjzMtOcIhQemL2VUYcGlS8R?usp=drive_link',
+    courses:   'https://drive.google.com/drive/folders/1TkWXeh4bNBGFDW-rKX5wkAu4g9093T9K?usp=sharing',
     summaries: 'https://drive.google.com/drive/folders/1ySqvGQktA7cPiSbBYsublrXRS333tktj?usp=drive_link',
     tp:        'https://drive.google.com/drive/folders/1OjtbFPkgr2TEUIamicX64zTEIb8rEdsx?usp=drive_link',
     td:        'https://drive.google.com/drive/folders/10vHiPPSf93ZUGL7EQOCwu9Tg17Op3dWT?usp=drive_link',

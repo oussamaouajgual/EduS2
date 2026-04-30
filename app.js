@@ -15,9 +15,9 @@ const RESOURCES = {
     tp:        'https://drive.google.com/drive/folders/1OjtbFPkgr2TEUIamicX64zTEIb8rEdsx?usp=drive_link',
     td:        'https://drive.google.com/drive/folders/10vHiPPSf93ZUGL7EQOCwu9Tg17Op3dWT?usp=drive_link',
     timetables: [
-      'timetable-a.jpg?v=2',
-      'timetable-extra-1.jpg?v=2',
-      'timetable-extra-2.png?v=2'
+      'timetable-a.jpg?v=4',
+      'timetable-extra-1.jpg?v=4',
+      'timetable-extra-2.png?v=4'
     ]
   },
   B: {
@@ -26,9 +26,9 @@ const RESOURCES = {
     tp:        'https://drive.google.com/drive/folders/1OjtbFPkgr2TEUIamicX64zTEIb8rEdsx?usp=drive_link',
     td:        'https://drive.google.com/drive/folders/10vHiPPSf93ZUGL7EQOCwu9Tg17Op3dWT?usp=drive_link',
     timetables: [
-      'timetable-b.jpg?v=2',
-      'timetable-extra-1.jpg?v=2',
-      'timetable-extra-2.png?v=2'
+      'timetable-b.jpg?v=4',
+      'timetable-extra-1.jpg?v=4',
+      'timetable-extra-2.png?v=4'
     ]
   },
   C: {
@@ -37,9 +37,9 @@ const RESOURCES = {
     tp:        'https://drive.google.com/drive/folders/1OjtbFPkgr2TEUIamicX64zTEIb8rEdsx?usp=drive_link',
     td:        'https://drive.google.com/drive/folders/10vHiPPSf93ZUGL7EQOCwu9Tg17Op3dWT?usp=drive_link',
     timetables: [
-      'timetable-c.jpg?v=2',
-      'timetable-extra-1.jpg?v=2',
-      'timetable-extra-2.png?v=2'
+      'timetable-c.jpg?v=4',
+      'timetable-extra-1.jpg?v=4',
+      'timetable-extra-2.png?v=4'
     ]
   }
 };

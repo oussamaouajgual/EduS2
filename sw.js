@@ -3,16 +3,16 @@
    Cache-first strategy for UI shell (offline support)
    ============================================================ */
 
-const CACHE_NAME = 'smp-s2-hub-v5';
+const CACHE_NAME = 'smp-s2-hub-v7';
 const SHELL_ASSETS = [
   './',
-  './index.html?v=2',
-  './style.css?v=2',
-  './app.js?v=2',
+  './index.html?v=4',
+  './style.css?v=4',
+  './app.js?v=4',
   './manifest.json',
   './logo.jpg',
-  './timetable-extra-1.jpg?v=2',
-  './timetable-extra-2.png?v=2',
+  './timetable-extra-1.jpg?v=4',
+  './timetable-extra-2.png?v=4',
 ];
 
 /* ── Install: pre-cache the shell ────────────────────────────── */

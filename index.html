@@ -13,16 +13,19 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="SMP S2 Hub" />
   <link rel="manifest" href="manifest.json" />
-  <link rel="apple-touch-icon" href="logo.jpg" />
-  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="LOGO 2.jpeg" />
+  <link rel="icon" type="image/jpeg" href="LOGO 2.jpeg" />
 
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://drive.google.com" />
+  <link rel="preconnect" href="https://lh3.googleusercontent.com" />
+  <link rel="preconnect" href="https://www.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
   <script defer src="/_vercel/insights/script.js"></script>
 
   <!-- Google AdSense -->
@@ -34,7 +37,7 @@
   <!-- ===== SPLASH SCREEN ===== -->
   <div id="splash" class="splash" aria-hidden="true">
     <div class="splash-inner">
-      <img src="logo.jpg" alt="S2 Logo" class="splash-main-logo">
+      <img src="LOGO 2.jpeg" alt="SMP Hub Logo" class="splash-main-logo">
     </div>
   </div>
 
@@ -49,11 +52,15 @@
     <header class="navbar">
       <nav class="nav-container">
         <div class="nav-brand">
-          <img src="logo.jpg" alt="S2 Platform" class="nav-logo">
+          <img src="LOGO 2.jpeg" alt="SMP Hub Platform" class="nav-logo">
         </div>
         <div class="nav-right">
+          <div class="sem-switch" role="tablist" aria-label="Semester Selection">
+            <button class="sem-tab" data-sem="S1" role="tab" aria-selected="false">S1</button>
+            <button class="sem-tab active" data-sem="S2" role="tab" aria-selected="true">S2</button>
+          </div>
           <div class="nav-text">
-            <span class="nav-title">SMP S2 Hub</span>
+            <span class="nav-title">SMP Hub</span>
             <span class="nav-subtitle">FS Meknès</span>
           </div>
           <button id="install-btn" class="install-btn" aria-label="Install App" style="display:none">
@@ -71,9 +78,9 @@
     <section class="hero">
       <div class="hero-tag">
         <span class="tag-dot"></span>
-        Physics · SMP S2 · 2025–2026
+        <span id="hero-tag-text">Physics · SMP S2 · 2025–2026</span>
       </div>
-      <h1 class="hero-title">All Your <span class="hero-highlight">SMP S2</span><br>Resources in One Place</h1>
+      <h1 class="hero-title">All Your <span class="hero-highlight" id="hero-highlight-text">SMP S2</span><br>Resources in One Place</h1>
       <p class="hero-sub">Access courses, summaries, TP, TD, organized and ready for you.</p>
       <a href="#dashboard" class="hero-cta" id="explore-cta">
         Explore Resources
@@ -101,8 +108,7 @@
       <div class="cards-grid" id="cards-grid">
 
         <!-- COURSES -->
-        <a id="card-courses" href="#" target="_blank" rel="noopener noreferrer" class="card card-courses"
-          data-category="courses">
+        <button id="card-courses" class="card card-courses" data-category="courses" aria-label="Browse Courses">
           <div class="card-header">
             <div class="card-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -115,7 +121,7 @@
             </div>
             <div class="card-arrow">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M3 13L13 3M13 3H7M13 3v6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5 11l6-6M11 5H6M11 5v5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
           </div>
@@ -125,11 +131,10 @@
           </div>
           <div class="card-tag">All Modules</div>
           <div class="card-glow"></div>
-        </a>
+        </button>
 
         <!-- SUMMARIES -->
-        <a id="card-summaries" href="#" target="_blank" rel="noopener noreferrer" class="card card-summaries"
-          data-category="summaries">
+        <button id="card-summaries" class="card card-summaries" data-category="summaries" aria-label="Browse Summaries">
           <div class="card-header">
             <div class="card-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -139,7 +144,7 @@
             </div>
             <div class="card-arrow">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M3 13L13 3M13 3H7M13 3v6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5 11l6-6M11 5H6M11 5v5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
           </div>
@@ -149,10 +154,10 @@
           </div>
           <div class="card-tag">Quick Review</div>
           <div class="card-glow"></div>
-        </a>
+        </button>
 
         <!-- TP -->
-        <a id="card-tp" href="#" target="_blank" rel="noopener noreferrer" class="card card-tp" data-category="tp">
+        <button id="card-tp" class="card card-tp" data-category="tp" aria-label="Browse TP">
           <div class="card-header">
             <div class="card-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -162,7 +167,7 @@
             </div>
             <div class="card-arrow">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M3 13L13 3M13 3H7M13 3v6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5 11l6-6M11 5H6M11 5v5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
           </div>
@@ -172,10 +177,10 @@
           </div>
           <div class="card-tag" id="tp-group-tag">Group A</div>
           <div class="card-glow"></div>
-        </a>
+        </button>
 
         <!-- TD -->
-        <a id="card-td" href="#" target="_blank" rel="noopener noreferrer" class="card card-td" data-category="td">
+        <button id="card-td" class="card card-td" data-category="td" aria-label="Browse TD">
           <div class="card-header">
             <div class="card-icon-wrap">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -185,7 +190,7 @@
             </div>
             <div class="card-arrow">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M3 13L13 3M13 3H7M13 3v6" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5 11l6-6M11 5H6M11 5v5" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </div>
           </div>
@@ -195,24 +200,29 @@
           </div>
           <div class="card-tag">Exercises</div>
           <div class="card-glow"></div>
-        </a>
+        </button>
 
       </div>
     </main>
 
-    <!-- ===== TD MODAL ===== -->
-    <div id="td-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Select TD">
+    <!-- ===== FILES EXPLORER MODAL ===== -->
+    <div id="files-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Browse Files">
       <div class="modal-sheet">
         <div class="modal-handle"></div>
         <div class="modal-header">
-          <h3 class="modal-title">
-            <span class="modal-icon">
+          <h3 class="modal-title" id="files-modal-title">
+            <button id="files-back-btn" class="modal-back-btn" aria-label="Go Back" style="display:none;">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 17l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <span class="modal-icon" id="files-modal-icon">
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M10 17h7M13.5 3.5a1.768 1.768 0 012.5 2.5L4.5 17 2 18l1-2.5 9.5-12z" stroke-linecap="round"
-                  stroke-linejoin="round" />
+                <path d="M9 2H3a1 1 0 00-1 1v14a1 1 0 001 1h14a1 1 0 001-1V9" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M14 2l4 4-7 7H7v-4l7-7z" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </span>
-            Select TD Session
+            <span id="files-modal-title-text">Files</span>
           </h3>
           <button class="modal-close" id="modal-close" aria-label="Close">
             <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
@@ -220,9 +230,22 @@
             </svg>
           </button>
         </div>
-        <p class="modal-sub" id="modal-group-label">Group A — Choose a session to open</p>
-        <div class="td-grid" id="td-grid">
+        <p class="modal-sub" id="files-modal-sub">Loading files…</p>
+        <!-- Breadcrumb Navigation Bar -->
+        <div class="files-breadcrumb" id="files-breadcrumb" style="display:none;"></div>
+        <!-- Files list -->
+        <div class="files-list" id="files-list">
           <!-- Dynamically generated -->
+        </div>
+        <!-- Fallback link shown on error -->
+        <div class="files-fallback" id="files-fallback" style="display:none">
+          <p class="files-fallback-msg">Couldn't load files automatically.</p>
+          <a id="files-fallback-link" href="#" target="_blank" rel="noopener noreferrer" class="files-fallback-btn">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 13L13 3M13 3H7M13 3v6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Open Folder in Drive
+          </a>
         </div>
       </div>
     </div>
@@ -315,13 +338,13 @@
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
-        <h2 class="about-title">Built for SMP S2 Students</h2>
-        <p class="about-body">This platform is your centralized academic hub for the Physics SMP Semester 2 program at
+        <h2 class="about-title" id="about-title">Built for SMP S2 Students</h2>
+        <p class="about-body" id="about-body">This platform is your centralized academic hub for the Physics SMP Semester 2 program at
           Faculté des Sciences de Meknès. All resources are organized by group and category — no more searching through
           shared drives.</p>
         <div class="about-pills">
           <span class="about-pill">FS Meknès</span>
-          <span class="about-pill">SMP · S2</span>
+          <span class="about-pill" id="about-pill-sem">SMP · S2</span>
           <span class="about-pill">Physics</span>
           <span class="about-pill">2025–2026</span>
         </div>
@@ -331,7 +354,7 @@
     <!-- ===== FOOTER ===== -->
     <footer class="footer">
       <p class="footer-text">Made with ♥ for <strong>SMP S2</strong> students — FS Meknès</p>
-      <p class="footer-note">Resources open externally via Google Drive</p>
+      <p class="footer-note">PDFs open directly in-app via embedded viewer</p>
     </footer>
 
     <!-- ===== BOTTOM NAV ===== -->
@@ -361,6 +384,103 @@
     </nav>
 
   </div><!-- /app -->
+
+  <!-- ===== SEMESTER SELECTION WELCOME MODAL ===== -->
+  <div id="semester-welcome-modal" class="sem-modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="sem-modal-card">
+      <div class="sem-modal-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 14l9-5-9-5-9 5 9 5z" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="sem-modal-title">Select your Semester</h2>
+      <p class="sem-modal-sub">Choose your academic semester to load the relevant courses, summaries, TP, TD, and schedule.</p>
+      
+      <div class="sem-options">
+        <button class="sem-option-card" data-sem="S1" type="button">
+          <div class="sem-opt-header">
+            <span class="sem-opt-tag">Fall</span>
+            <span class="sem-opt-code">S1</span>
+          </div>
+          <div class="sem-opt-body">
+            <h3 class="sem-opt-title">Semester 1 (S1)</h3>
+            <p class="sem-opt-desc">Courses, TP, TD &amp; Summaries</p>
+          </div>
+          <div class="sem-opt-arrow">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </button>
+
+        <button class="sem-option-card" data-sem="S2" type="button">
+          <div class="sem-opt-header">
+            <span class="sem-opt-tag">Spring</span>
+            <span class="sem-opt-code">S2</span>
+          </div>
+          <div class="sem-opt-body">
+            <h3 class="sem-opt-title">Semester 2 (S2)</h3>
+            <p class="sem-opt-desc">Courses, TP, TD &amp; Summaries</p>
+          </div>
+          <div class="sem-opt-arrow">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PDF VIEWER MODAL ===== -->
+  <div id="pdf-viewer-modal" class="pdf-viewer-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="PDF Viewer">
+    <!-- Toolbar -->
+    <div class="pdf-toolbar">
+      <div class="pdf-toolbar-left">
+        <div class="pdf-icon-badge">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M4 4h8l4 4v8a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1z" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 4v4h4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <span class="pdf-filename" id="pdf-filename">Document.pdf</span>
+      </div>
+      <div class="pdf-toolbar-right">
+        <a id="pdf-drive-link" href="#" target="_blank" rel="noopener noreferrer" class="pdf-action-btn pdf-drive-btn" aria-label="Open in Google Drive">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 13L13 3M13 3H7M13 3v6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Open in Drive</span>
+        </a>
+        <a id="pdf-download-link" href="#" target="_blank" rel="noopener noreferrer" class="pdf-action-btn pdf-download-btn" aria-label="Download PDF">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M10 2v10M6 8l4 4 4-4M4 14v2a1 1 0 001 1h10a1 1 0 001-1v-2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Download</span>
+        </a>
+        <button id="pdf-viewer-close" class="pdf-viewer-close" aria-label="Close viewer">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 15L15 5M5 5l10 10" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- iframe container -->
+    <div class="pdf-frame-container">
+      <div class="pdf-loading" id="pdf-loading">
+        <div class="pdf-spinner"></div>
+        <span>Loading PDF…</span>
+      </div>
+      <iframe
+        id="pdf-iframe"
+        class="pdf-iframe"
+        src=""
+        allowfullscreen
+        title="PDF Viewer"
+      ></iframe>
+    </div>
+  </div>
 
   <!-- ===== LIGHTBOX MODAL ===== -->
   <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog">

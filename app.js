@@ -27,7 +27,7 @@ const SEMESTER_RESOURCES = {
         tp:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         td:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         timetables: [
-          'A.jpg?v=4',
+          'timetable-a.jpg?v=5',
         ]
       },
       B: {
@@ -36,7 +36,7 @@ const SEMESTER_RESOURCES = {
         tp:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         td:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         timetables: [
-          'B.jpg?v=4',
+          'timetable-b.jpg?v=5',
         ]
       },
       C: {
@@ -45,7 +45,7 @@ const SEMESTER_RESOURCES = {
         tp:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         td:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         timetables: [
-          'C.jpg?v=4',
+          'timetable-c.jpg?v=5',
         ]
       }
     }
@@ -357,6 +357,22 @@ function renderTimetables(group) {
     img.src = src;
     img.loading = 'lazy';
     img.alt = `Timetable for ${semKey} Group ${group}`;
+
+    // Graceful onerror fallback for loading delays or network issues
+    img.onerror = () => {
+      img.onerror = null;
+      const cleanSrc = src.split('?')[0];
+      if (img.src !== cleanSrc) {
+        img.src = cleanSrc; // Retry without cache buster
+      } else {
+        img.style.display = 'none';
+        const fallbackMsg = document.createElement('div');
+        fallbackMsg.className = 'timetable-fallback-placeholder';
+        fallbackMsg.style.cssText = 'padding: 2.5rem 1rem; text-align: center; color: rgba(255,255,255,0.7); font-size: 0.9rem; font-weight: 500;';
+        fallbackMsg.innerHTML = `<span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📅</span>Schedule for Group ${group} (Tap to view)`;
+        card.appendChild(fallbackMsg);
+      }
+    };
 
     card.addEventListener('click', () => openLightbox(src));
 

@@ -27,7 +27,7 @@ const SEMESTER_RESOURCES = {
         tp:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         td:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         timetables: [
-          'timetable-a.jpg?v=5',
+          'timetable-a.jpg',
         ]
       },
       B: {
@@ -36,7 +36,7 @@ const SEMESTER_RESOURCES = {
         tp:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         td:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         timetables: [
-          'timetable-b.jpg?v=5',
+          'timetable-b.jpg',
         ]
       },
       C: {
@@ -45,7 +45,7 @@ const SEMESTER_RESOURCES = {
         tp:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         td:        'https://drive.google.com/drive/folders/15QcztTMH-GcdTMJgMQPPm69eXmphVvzF',
         timetables: [
-          'timetable-c.jpg?v=5',
+          'timetable-c.jpg',
         ]
       }
     }

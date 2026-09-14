@@ -3,14 +3,14 @@
    Cache-first strategy for UI shell (offline support)
    ============================================================ */
 
-const CACHE_NAME = 'smp-hub-v9';
+const CACHE_NAME = 'smp-hub-v10';
 const SHELL_ASSETS = [
   './',
   './index.html?v=5',
   './style.css?v=5',
   './app.js?v=5',
   './manifest.json',
-  './LOGO 2.jpeg',
+  './logo2.jpeg',
   './A.jpg?v=4',
   './B.jpg?v=4',
   './C.jpg?v=4',
@@ -38,33 +38,40 @@ self.addEventListener('activate', event => {
   );
 });
 
-/* ── Fetch: cache-first, fallback to network ─────────────────── */
+/* ── Fetch: Cache-first, fallback to network ─────────────────── */
 self.addEventListener('fetch', event => {
+  // Only intercept GET requests for same-origin shell assets
   if (event.request.method !== 'GET') return;
 
   const url = new URL(event.request.url);
 
-  // Pass through Google Drive, Docs, and APIs (always network)
-  if (
-    url.hostname === 'drive.google.com' ||
-    url.hostname === 'docs.google.com'  ||
-    url.hostname === 'www.googleapis.com'
-  ) return;
+  // Don't cache Google Drive API calls or cross-origin requests in SW shell cache
+  if (url.hostname.includes('googleapis.com') || url.hostname.includes('drive.google.com')) {
+    return;
+  }
 
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      if (cached) return cached;
+    caches.match(event.request).then(cachedResponse => {
+      if (cachedResponse) {
+        // Return cached asset, fetch update in background (stale-while-revalidate for html/js/css)
+        fetch(event.request)
+          .then(networkResponse => {
+            if (networkResponse && networkResponse.status === 200) {
+              caches.open(CACHE_NAME).then(cache => cache.put(event.request, networkResponse));
+            }
+          })
+          .catch(() => { /* Offline fallback, ignore error */ });
+        return cachedResponse;
+      }
 
-      return fetch(event.request).then(response => {
-        if (response && response.status === 200 && url.origin === self.location.origin) {
-          const clone = response.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+      // Not in cache: fetch network
+      return fetch(event.request).then(networkResponse => {
+        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
+          return networkResponse;
         }
-        return response;
-      }).catch(() => {
-        if (event.request.mode === 'navigate') {
-          return caches.match('./index.html');
-        }
+        const responseToCache = networkResponse.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseToCache));
+        return networkResponse;
       });
     })
   );
